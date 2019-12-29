@@ -1,0 +1,19 @@
+{
+  "name": "shutterstock-api-sandbox",
+  "version": "1.0.0",
+  "description": "A sandbox react application for building against the shutterstock api",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mHubbell/shutterstock-api-sandbox.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mHubbell/shutterstock-api-sandbox/issues"
+  },
+  "homepage": "https://github.com/mHubbell/shutterstock-api-sandbox#readme"
+}
