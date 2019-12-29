@@ -1,12 +1,13 @@
 import React, { Component } from 'react';
+import Box from '@material-ui/core/Box';
 import Typography from '@material-ui/core/Typography';
 
 class Home extends Component {
   render() {
     return (
-      <div>
-        <Typography>Hello World</Typography>
-      </div>
+      <Box>
+        <Typography>Hello World!</Typography>
+      </Box>
     );
   }
 }
