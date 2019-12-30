@@ -49,7 +49,7 @@ This means there is a missing file that the application is expecting. This is on
 
 ## Getting a Shutterstock API Key
 
-To get your key and secret you will need an account at Shutterstock. Go sign up for one here: https://developers.shutterstock.com/ You will then need to set up an app. Choose all of the "automatic approval" options and set both the callback url and hostname as `localhost` when creating your app. You can now access your key and secret. Copy paste those into a file on the main project route called `env.private.js` like so:
+To get your key and secret you will need an account at Shutterstock. Go sign up for one here: https://developers.shutterstock.com/ You will then need to set up an app. Choose all of the "automatic approval" options and set both the callback url and hostname as `localhost` when creating your app. You can now access your key and secret. Copy paste those into a file on the main project root called `env.private.js` like so:
 
 ```
 process.env.SSTK_KEY = '<client key here>';
