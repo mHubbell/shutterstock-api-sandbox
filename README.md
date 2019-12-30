@@ -108,7 +108,7 @@ https://github.com/shutterstock/public-api-javascript-sdk
 
 The webpack config manages the building of our front end ui code. These days we like to write javascript in lots of fancy ways that browsers cannot actually interpret as is. We also generally want to "package" our javascript files into one or more "bundles" to be included in the page. Webpack manages this for us, principally employing a tool called `babel` which "transpiles" our javascript code into a bundle containing code that browsers can understand.
 
-Webpack is invoked when we run the server (you can see references to this in our servier.js file) but it can also be invoked on its own via `npm run build`. In general we wouldnt hook webpack up to the server in a production environment and instead would pre-build our javascript using this command, only invoking the server side webpack when developing. Since we dont plan to actually deploy this application we shouldnt need to worry ourselves with that for this exercise. See the documenation for all of the things webpack can do for us here:
+Webpack is invoked when we run the server (you can see references to this in our server.js file) but it can also be invoked on its own via `npm run build`. In general we wouldnt hook webpack up to the server in a production environment and instead would pre-build our javascript using this command, only invoking the server side webpack when developing. Since we dont plan to actually deploy this application we shouldnt need to worry ourselves with that for this exercise. See the documenation for all of the things webpack can do for us here:
 
 https://webpack.js.org/
 
