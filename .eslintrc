@@ -5,6 +5,7 @@
       "jsx-a11y",
       "import"
   ],
+  "parser": "babel-eslint",
   "rules": {
     "react/jsx-curly-newline": 0,
     "react/prefer-stateless-function": 0,

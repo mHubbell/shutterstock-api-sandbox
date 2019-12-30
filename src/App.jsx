@@ -10,7 +10,7 @@ import {
 } from 'react-router-dom';
 import Tabs from '@material-ui/core/Tabs';
 import Tab from '@material-ui/core/Tab';
-import Home from './Home';
+import Search from './Search';
 import theme from './theme';
 
 const tabStyles = { tabs: { 'margin-bottom': '10px' } };
@@ -32,7 +32,7 @@ class App extends Component {
       <ThemeProvider theme={theme}>
         <Router>
           <HeaderTabs />
-          <Route path="/" exact component={Home} />
+          <Route path="/" exact component={Search} />
         </Router>
       </ThemeProvider>
     );

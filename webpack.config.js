@@ -1,10 +1,20 @@
 /* eslint-disable import/no-extraneous-dependencies */
 const path = require('path');
-const webpack = require('webpack');
+const { HotModuleReplacementPlugin } = require('webpack');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 module.exports = {
-  entry: './src/index.jsx',
   mode: 'development',
+  entry: './src/index.jsx',
+  plugins: [
+    new CleanWebpackPlugin(),
+    new HtmlWebpackPlugin({
+      title: 'Shutterstock API Sandbox',
+      template: 'src/index.html',
+    }),
+    new HotModuleReplacementPlugin(),
+  ],
   module: {
     rules: [
       {
@@ -19,17 +29,12 @@ module.exports = {
   },
   resolve: { extensions: ['*', '.js', '.jsx'] },
   output: {
-    path: path.resolve(__dirname, 'dist/'),
-    publicPath: '/dist/',
-    filename: 'bundle.js',
+    filename: '[name].bundle.js',
+    path: path.resolve(__dirname, 'dist'),
+    publicPath: '/',
   },
   devServer: {
-    contentBase: path.join(__dirname, 'public/'),
-    port: 3000,
-    publicPath: 'http://localhost:3000/dist/',
-    hotOnly: true,
+    contentBase: './dist',
+    hot: true,
   },
-  plugins: [
-    new webpack.HotModuleReplacementPlugin(),
-  ],
 };
