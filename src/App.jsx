@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { hot } from 'react-hot-loader';
 import { withStyles } from '@material-ui/core/styles';
 import { ThemeProvider } from '@material-ui/styles';
 import {
@@ -39,4 +38,4 @@ class App extends Component {
   }
 }
 
-export default hot(module)(App);
+export default App;

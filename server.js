@@ -36,8 +36,8 @@ app.use(webpackDevMiddleware(compiler, {
   publicPath: config.output.publicPath,
 }));
 
-// create a controller that will respond when we call our application
-// at the `/search` route. This for now just hardcodes a search and returns
+// create a controller or "route" that will respond when we call our application
+// at the `/search` url. This for now just hardcodes a search and returns
 // its results.
 app.get('/search', async (req, res) => {
   const queryParams = {
@@ -51,5 +51,5 @@ app.get('/search', async (req, res) => {
 
 // Serve the application on port 3000.
 app.listen(3000, () => {
-  console.log('Example app listening on port 3000!\n');
+  console.log('Example app listening on port 3000!\n'); // eslint-disable-line no-console
 });

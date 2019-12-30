@@ -1,6 +1,5 @@
 /* eslint-disable import/no-extraneous-dependencies */
 const path = require('path');
-const { HotModuleReplacementPlugin } = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
@@ -13,7 +12,6 @@ module.exports = {
       title: 'Shutterstock API Sandbox',
       template: 'src/index.html',
     }),
-    new HotModuleReplacementPlugin(),
   ],
   module: {
     rules: [
@@ -35,6 +33,5 @@ module.exports = {
   },
   devServer: {
     contentBase: './dist',
-    hot: true,
   },
 };
