@@ -45,7 +45,7 @@ Oops! That didnt work. You should see a message that says:
 
 `Error: Cannot find module './env.private'`
 
-This means there is a missing file that the application is expecting. This is on purpose. This file is meant to contain an application key / secret needed to talk to the shutterstock api. We dont want this information flaoting around here in github so this file is specifically `ignored` and should never be committed to the repo for the world to see. This brings us to our next step.
+This means there is a missing file that the application is expecting. This is on purpose. This file is meant to contain an application key / secret needed to talk to the shutterstock api. We dont want this information floating around here in github so this file is specifically `ignored` and should never be committed to the repo for the world to see. This brings us to our next step.
 
 ## Getting a Shutterstock API Key
 
