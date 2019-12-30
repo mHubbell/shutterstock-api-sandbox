@@ -9,14 +9,12 @@ class Search extends Component {
     this.state = { results: [] };
   }
 
-  doSearch = () => {
-    axios.get('/search')
-      .then((results) => {
-        const { data } = results;
-        this.setState({
-          results: data.data,
-        });
-      });
+  doSearch = async () => {
+    const results = await axios.get('/search');
+    const { data } = results;
+    this.setState({
+      results: data.data,
+    });
   }
 
   render() {
