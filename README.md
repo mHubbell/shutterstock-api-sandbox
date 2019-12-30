@@ -14,7 +14,7 @@ Do so here on this very website in the top right corner.
 Next we will want to be able to interact with github via the command line with `git`. Install it on your machine following the instructions here: https://git-scm.com/book/en/v2/Getting-Started-Installing-Git
 
 ### node.js
-This application is a `node.js` application so you will need node running on your machine in order to develop on it. The easiest way to do that is via the `nvm` tool. As long as we are on osx or linux installation of `nvm` is straightforward. (If not there are other options) Follow the instructions here: https://github.com/nvm-sh/nvm
+This application is a `node.js` application so you will need node running on your machine in order to develop on it. The easiest way to do that is via the `nvm` tool. As long as we are on osx or linux, installation of `nvm` is straightforward. (If not there are other options) Follow the instructions here: https://github.com/nvm-sh/nvm
 
 Once you are set up with nvm you can run `nvm install node 12` to install the latest LTS version of node. After that you can tell it to `nvm use 12` in any shell to run node.
 
