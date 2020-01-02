@@ -2,6 +2,33 @@
 
 Welcome to Shutterstock! The exercise we have prepared for you here is an introduction to quite a few essential tools and concepts involved in day to day web application development. This application will use your own api developer account to make requests to the Shutterstock public api and do interesting things with the results of those requests. The basic app has been set up for you here in this git repository and once we get it pulled down and built and you are set up with your developer account you should be ready to hit the ground running!
 
+* [Getting set up.](#getting-set-up)
+  * [Github](#github)
+  * [Git](#git)
+  * [node.js](#nodejs)
+* [Pulling down and building the app](#pulling-down-and-building-the-app)
+* [Getting a Shutterstock API Key](#getting-a-shutterstock-api-key)
+* [Developing in the sandbox](#developing-in-the-sandbox)
+  * [Set up an editor](#set-up-an-editor)
+  * [Let's write some code](#lets-write-some-code)
+  * [Understanding the application](#understanding-the-application)
+    * [src/](#src)
+    * [index.html](#indexhtml)
+    * [index.jsx](#indexjsx)
+    * [App.jsx](#appjsx)
+    * [Search.jsx](#searchjsx)
+    * [theme.js](#themejs)
+  * [Ui dependencies](#ui-dependencies)
+    * [material](#material)
+    * [axios](#axios)
+  * [Additional reading](#additional-reading)
+    * [package.json](#packagejson)
+    * [server.js](#serverjs)
+    * [webpack.config.js](#webpackconfigjs)
+    * [.babelrc](#babelrc)
+    * [.eslintrc, .eslintignore](#eslintrc-eslintignore)
+    * [.gitignore](#gitignore)
+
 ## Getting set up.
 
 Before we get started writing code we will need some prerequisites:
@@ -66,67 +93,27 @@ You are now ready to start writing some code! If you dont already have a favorit
 
 https://atom.io/
 
-Regardless of what editor you are using you will want it to be ready for coding a react / node javascript application so you will want plugins related to syntax highlighting and inline helpers for those languages. In atom these are principally:
-
-linter-eslint - hooks in with "lint" rules and helps you avoid mistakes and typos as well as adhering to coding best practice
-
-Something for jsdocs (comment blocks that go above methods) I am currently using `atom-easy-jsdoc` which helps a bit but there are many out there
-
-Atom already understands js, jsx and json files so theres not much to do there but there are many many helpful plugins available in atom to explore.
-
-### Create a branch
-
-The first thing to do before we start coding is to checkout a new branch of the code. This way you can work on changes independently and not affect the code in the `master` branch. In your terminal (while in the project folder) type:
+Regardless of what editor you are using you will want it to be ready for coding a react / node javascript application so you will want plugins related to syntax highlighting and inline helpers for those languages.
 
 ```
-git checkout -b <a-reasonable-name>
+git checkout -b winternship2020
 ```
 
-replacing the `<a-reasonable-name>` bit with a branch name of your choosing (since we dont know exactly what well be doing yet anything reasonably unique will do)
+### Let's write some code
 
-### Explore the basic parts of the application
+Open `src/Search.jsx` and find the `Try a Search` text.
 
-Lets have a quick look at the basic parts of the application and their related dependencies
+Change this to read `Welcome to Winternship! Try a Search!`
 
-#### package.json
+Save the file and switch back to your browser. Refresh the page. Note the button text has changed to reflect your changes. Wow!
 
-The package file is something you will see in almost every javascript application you will come across. This file describes the application, its dependencies and defines scripts used for building and running our application. It hooks us up to `npm` and allows us to install and manage dependencies. `npm` is a very widely used network of open source javascript packages. If you can think of it, it is likely that something exists there for you to install, and if not you can create something and make it available for others. We wont be covering that in this exercise but if curious we can look into that process.
+### Understanding the application
 
-https://www.npmjs.com/
+Modifying a single file is one thing, understanding how it all fits together is a bit more challenging.
 
-#### server.js
+#### src/
 
-This is the server side of our application. It is based on `express` which is a very common framework for creating node js web applications. See the documentation here:
-
-https://expressjs.com/
-
-This file is what is executed when we run `npm start` you can see the reference to that inside the `package.json` under `scripts`. This runs `node` on the server.js file which creates an express application and tells it to start "listening" on port 3000. It is here that we can start creating `routes` for our application to call and also where we will be interacting with the shutterstock api via the shutterstock "sdk" (software development kit) The sdk provides an easy way to interact with the api by setting up our authentication and providing validated methods we can use to call the various endpoints it provides.
-
-https://github.com/shutterstock/public-api-javascript-sdk
-
-#### webpack.config.js
-
-The webpack config manages the building of our front end ui code. These days we like to write javascript in lots of fancy ways that browsers cannot actually interpret as is. We also generally want to "package" our javascript files into one or more "bundles" to be included in the page. Webpack manages this for us, principally employing a tool called `babel` which "transpiles" our javascript code into a bundle containing code that browsers can understand.
-
-Webpack is invoked when we run the server (you can see references to this in our server.js file) but it can also be invoked on its own via `npm run build`. In general we wouldnt hook webpack up to the server in a production environment and instead would pre-build our javascript using this command, only invoking the server side webpack when developing. Since we dont plan to actually deploy this application we shouldnt need to worry ourselves with that for this exercise. See the documentation for all of the things webpack can do for us here:
-
-https://webpack.js.org/
-
-#### .babelrc
-
-This file tells `babel` how we want our code transpiled by referencing various "plugins" and "presets". These tell babel what kinds of fancy javascript features we are using so that it is prepared to turn them into vanilla javascript for consumption.
-
-#### .eslintrc, .eslintignore
-
-These files tell `eslint` about the code syntax to expect in our javascript files so that our editor can help us create cleanly written and hopefully not broken code. Some files should be ignored such as the transpiled bundle. This is governed by .eslintignore
-
-#### .gitignore
-
-The git ignore file tells git to ignore certain files and folders when committing code. This is how we keep our private env file out of git as well as various other folders that will be automatically generated during our build process that we dont actually want in our repository.
-
-### Explore the front end application
-
-Now the fun part! The front end code is housed within the `src` directory (a common convention for javascript projects). Our application is written in `react`. React was originally conceived at Facebook and is the principal tool used there for their front end development as well as a quickly growing group of other companies (including Shutterstock) React has a very large and active community of developers creating various useful components and applications. There are _lots_ of javascript frameworks out there, all of them with various pros and cons. They also tend to change _a lot_. This can sometimes lead to what we call "javascript fatigue". As soon as we've built an application there will be a newer, cooler, better way to do it that all the kids are doing these days. That said `react` is pretty great and should be around for a while. If you are looking at getting started in front end web development you could do worse than to start here.
+The front end code is housed within the `src` directory (a common convention for javascript projects). Our application is written in `react`. React was originally conceived at Facebook and is the principal tool used there for their front end development as well as a quickly growing group of other companies (including Shutterstock) React has a very large and active community of developers creating various useful components and applications. `react` is pretty great and should be around for a while. If you are looking at getting started in front end web development, react is a good place to start.
 
 https://reactjs.org/
 
@@ -183,3 +170,41 @@ https://github.com/axios/axios
 Ok thats the basics! You are ready to start playing with the application. We will sit together when youve got the basics set up here and brainstorm some ideas for what this application might do. When you are ready to commit some code I will make you a "collaborator" on this Github repository and then you can commit and push your branch, creating a pull request that I can review and subsequently merge into the master branch. We will go over the details of that when you are ready to do so.
 
 Have fun!
+
+### Additional reading
+
+#### package.json
+
+The package file is something you will see in almost every javascript application you will come across. This file describes the application, its dependencies and defines scripts used for building and running our application. It hooks us up to `npm` and allows us to install and manage dependencies. `npm` is a very widely used network of open source javascript packages. If you can think of it, it is likely that something exists there for you to install, and if not you can create something and make it available for others. We wont be covering that in this exercise but if curious we can look into that process.
+
+https://www.npmjs.com/
+
+#### server.js
+
+This is the server side of our application. It is based on `express` which is a very common framework for creating node js web applications. See the documentation here:
+
+https://expressjs.com/
+
+This file is what is executed when we run `npm start` you can see the reference to that inside the `package.json` under `scripts`. This runs `node` on the server.js file which creates an express application and tells it to start "listening" on port 3000. It is here that we can start creating `routes` for our application to call and also where we will be interacting with the shutterstock api via the shutterstock "sdk" (software development kit) The sdk provides an easy way to interact with the api by setting up our authentication and providing validated methods we can use to call the various endpoints it provides.
+
+https://github.com/shutterstock/public-api-javascript-sdk
+
+#### webpack.config.js
+
+The webpack config manages the building of our front end ui code. These days we like to write javascript in lots of fancy ways that browsers cannot actually interpret as is. We also generally want to "package" our javascript files into one or more "bundles" to be included in the page. Webpack manages this for us, principally employing a tool called `babel` which "transpiles" our javascript code into a bundle containing code that browsers can understand.
+
+Webpack is invoked when we run the server (you can see references to this in our server.js file) but it can also be invoked on its own via `npm run build`. In general we wouldnt hook webpack up to the server in a production environment and instead would pre-build our javascript using this command, only invoking the server side webpack when developing. Since we dont plan to actually deploy this application we shouldnt need to worry ourselves with that for this exercise. See the documentation for all of the things webpack can do for us here:
+
+https://webpack.js.org/
+
+#### .babelrc
+
+This file tells `babel` how we want our code transpiled by referencing various "plugins" and "presets". These tell babel what kinds of fancy javascript features we are using so that it is prepared to turn them into vanilla javascript for consumption.
+
+#### .eslintrc, .eslintignore
+
+These files tell `eslint` about the code syntax to expect in our javascript files so that our editor can help us create cleanly written and hopefully not broken code. Some files should be ignored such as the transpiled bundle. This is governed by .eslintignore
+
+#### .gitignore
+
+The git ignore file tells git to ignore certain files and folders when committing code. This is how we keep our private env file out of git as well as various other folders that will be automatically generated during our build process that we dont actually want in our repository.
