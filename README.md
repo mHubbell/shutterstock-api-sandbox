@@ -107,6 +107,16 @@ Change this to read `Welcome to Winternship! Try a Search!`
 
 Save the file and switch back to your browser. Refresh the page. Note the button text has changed to reflect your changes. Wow!
 
+### Commit your changes
+
+Now that weve modified some code we can commit our change and create a pull request in github. Before doing this make sure we have added you as a `collaborator` on this repository so that you can commit your branch. On your command line:
+
+`git add *` - This will add of your changes to the files (You can be more specific by typing `git add src/Search.jsx`)
+`git commit -m "<type a description of what you did here>"` - This will create a commit
+`git push` - This will push your changes back to github. You will be asked for your username and password here but that should only happen the first time
+
+Now you can go to the repo in Github and you will be prompted to "create a pull request" with your newly pushed branch. Do that and we will take a look and then merge it.
+
 ### Understanding the application
 
 Modifying a single file is one thing, understanding how it all fits together is a bit more challenging.
@@ -149,7 +159,7 @@ The core of the component happens within the `render` function at the bottom. Th
 
 This file defines general styling properties for our application. It is analogous to a `css` stylesheet that you may have seen in a more traditional html application. In our application however we define our styles as javascript objects which will be transformed into css for us by `material` (some more detail about that below)
 
-### Ui dependencies
+### UI dependencies
 
 In our app we are making use of some third party libraries that make react development much easier and enjoyable. We will have a quick look at those.
 
