@@ -21,7 +21,7 @@ class Search extends Component {
     const { results } = this.state;
     return (
       <Box>
-        <Button onClick={this.doSearch}>Try a Search</Button>
+        <Button onClick={this.doSearch}>Welcome to Winternship! Try a Search</Button>
         {results.map((result) => <pre key={result.id}>{JSON.stringify(result, null, 2)}</pre>)}
       </Box>
     );
