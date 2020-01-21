@@ -20,7 +20,10 @@ const HeaderTabs = withRouter(withStyles(tabStyles)((props) => {
   };
   return (
     <Tabs value={tabValues[location.pathname]} className={classes.tabs}>
-      <Tab label="Welcome" component={Link} to="/" />
+      <Tab label="Welcome :)" component={Link} to="/" />
+      <Tab label="Photo" component={Link} to="/" />
+      <Tab label="Memes" component={Link} to="/" />
+      <Tab label="About Us" component={Link} to="/" />
     </Tabs>
   );
 }));
@@ -37,5 +40,7 @@ class App extends Component {
     );
   }
 }
+
+
 
 export default App;

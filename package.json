@@ -53,7 +53,7 @@
     "react-dom": "16.12.0",
     "react-hot-loader": "4.12.18",
     "react-router-dom": "5.1.2",
-    "shutterstock-api": "1.0.16",
+    "shutterstock-api": "^1.0.16",
     "webpack": "4.41.5",
     "webpack-dev-middleware": "3.7.2",
     "webpack-dev-server": "3.10.1"

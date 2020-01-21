@@ -1,0 +1,1 @@
+{"errors":[{"code":"VALIDATION_OBJECT_REQUIRED","message":"Missing required property: grant_type","path":"$.grant_type"}],"message":"Validation failed"}{"errors":[{"code":"VALIDATION_OBJECT_REQUIRED","message":"Missing required property: grant_type","path":"$.grant_type"}],"message":"Validation failed"}

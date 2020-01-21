@@ -39,9 +39,13 @@ app.use(webpackDevMiddleware(compiler, {
 // create a controller or "route" that will respond when we call our application
 // at the `/search` url. This for now just hardcodes a search and returns
 // its results.
+
 app.get('/search', async (req, res) => {
+  const query = req.query.query
+  console.log('query',query);
+  console.log('params',req.query);
   const queryParams = {
-    query: 'New York',
+    query,
     sort: 'popular',
     orientation: 'horizontal',
   };
