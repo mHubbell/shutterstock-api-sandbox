@@ -33,13 +33,15 @@ class Search extends Component {
         <TextField onChange = {( event)=> this.setState({query:event.target.value})}/>
         <Button onClick={this.doSearch}>Search</Button>
 
-        {results.map((result) => {
+        <div style={{ display: 'flex','flex-wrap':'wrap' }}>
+          {results.map((result) => {
 
-            return (<SearchRender key ={result.id} result = {result} />)
-            // return (<img key={id} src={previewUrl} />)
-            // return <pre key={result.id}>{JSON.stringify(result, null, 2)}</pre>
-          }
-        )}
+              return (<SearchRender key ={result.id} result = {result} />)
+              // return (<img key={id} src={previewUrl} />)
+              // return <pre key={result.id}>{JSON.stringify(result, null, 2)}</pre>
+            }
+          )}
+        </div>
       </Box>
     );
   }

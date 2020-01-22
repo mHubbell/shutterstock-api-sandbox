@@ -5,19 +5,22 @@ import { withStyles } from '@material-ui/core/styles';
 
 const styles = {
   root: {
-    'margin': '0px',
-    'padding':'0px',
-    'list-style':'none',
-    'display':'-webkit-box',
-    'display':'-moz-box',
-    'display':'ms-flexbox',
-    'display':'-webkit-flex',
-    'display':'flex',
+    'margin': '10px',
+    'padding':'10px',
+    'width': '315px',
+    // 'list-style':'none',
+    // 'display':'-webkit-box',
+    // 'display':'-moz-box',
+    // 'display':'ms-flexbox',
+    // 'display':'-webkit-flex',
+    // 'display':'flex',
+    'flex-wrap': 'wrap',
     '-webkit-flex-flow':'row wrap',
-    'justify-content':'space-around'
+    'justify-content':'space-around',
 
    },
   image:{
+    'flex': '1 0 21%',
     'background':'tomato',
     'padding':'5px',
     'width':'200px',
