@@ -23,21 +23,19 @@ class Search extends Component {
     });
   }
 
+
 //added a map which basically pulls an image from the asset in each object (the preview image) and pritns it
   render() {
     const { results, query } = this.state;
 
     return (
       <Box>
-      <div>
         <TextField onChange = {( event)=> this.setState({query:event.target.value})}/>
-        </div>
         <Button onClick={this.doSearch}>Search</Button>
-
 
         {results.map((result) => {
 
-            return (<SearchRender result = {result} />)
+            return (<SearchRender key ={result.id} result = {result} />)
             // return (<img key={id} src={previewUrl} />)
             // return <pre key={result.id}>{JSON.stringify(result, null, 2)}</pre>
           }
